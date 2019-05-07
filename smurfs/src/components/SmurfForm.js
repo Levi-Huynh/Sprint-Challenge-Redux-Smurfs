@@ -30,7 +30,7 @@ handleChange = e => {
 };
 
 postMessage = e => {
- e.preventDefault();
+//  e.preventDefault();
     this.props.postSmurf(this.state.newSmurf);
     this.setState({
         newSmurf: {
@@ -39,6 +39,7 @@ postMessage = e => {
            height: ""
         }
     });
+    this.windows.reload();
    this.props.history.push('/');
   
 };

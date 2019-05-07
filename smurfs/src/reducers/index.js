@@ -4,7 +4,7 @@
 
 import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE,
   LOAD_NEW_SMURF, NEW_SMURF_SUCCESS, FETCH_SMURF_UPDATE, 
- SMURF_UPDATE_SUCCESS} from "../actions/index";
+ SMURF_UPDATE_SUCCESS, LOAD_DELETE_SMURF, DELETE_SMURF_SUCCESS, TOGGLE_UPDATE_SMURF, SINGLE_SMURF, SMURF} from "../actions/index";
   
 
  const initialState =
@@ -14,7 +14,8 @@ import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE,
    addingSmurf: false,
    updatingSmurf: false,
    deletingSmurf: false,
-   error: null
+   error: null,
+ 
  }
 
 /*
@@ -76,6 +77,19 @@ const reducer = (state = initialState, action) => {
 
 
        };
+
+  
+
+      //  case LOAD_DELETE_SMURF:
+      //  return { ...state, error:""}
+       
+      //  case DELETE_SMURF_SUCCESS:
+       
+      //  return {...state, 
+      //  smurfs: state.smurfs.map(smurf, index) =>
+      //   action.payload === index?
+      //   {...state.smurfs.filter(smurf =>)
+      // }
 
     default:
       return state;

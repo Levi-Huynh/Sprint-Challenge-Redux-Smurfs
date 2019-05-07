@@ -9,7 +9,7 @@ export default props => {
           <li>
             <NavLink exact activeClassName="activeNavButton" to='/'><button>Smurf List</button></NavLink>
             <NavLink exact activeClassName="activeNavButton" to='/SmurfForm'><button>Add a Smurf Form</button></NavLink>
-            <NavLink exact activeClassName="activeNavButton" to='/UpdateSmurfForm'><button>Edit/ Delete Smurf Form</button></NavLink>
+            <NavLink exact activeClassName="activeNavButton" to='/UpdateSmurf'><button>Update Smurf Form</button></NavLink>
           </li>
         </ul>
       </div>

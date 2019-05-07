@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {updateSmurf} from "../actions/index";
-
+import { withRouter } from 'react-router'
 
 class UpdateSmurfForm extends React.Component {
 constructor(props) {
@@ -25,6 +25,7 @@ constructor(props) {
     
 
     handleChange = (e, input) => {
+        e.persist();
     const key = input+"1";
     this.setState({
         
@@ -38,11 +39,18 @@ constructor(props) {
 
 
 putMessage = e => {
-    e.preventDefault();
+    // e.preventDefault();
     this.props.updateSmurf(this.state.name1, this.state.age1, 
         this.state.height1, this.props.id);
-        
+     this.setState({
+         editing: !this.state.editing
+     });
+  
+   
+ 
 };
+
+
 
 //must put () with event inside parenth for onChange so that it only invokes
 //the method when event occurs on it..& also passes allows you to pass through 
@@ -53,9 +61,9 @@ render() {
     return (
         <div>
   
-    <div className='friend-form'>
-    <h2>Update Smurf (put)</h2>
-    <form onSubmit={this.putMessage.bind(this)}>
+    <div >
+    <h2>Update Smurf: {this.props.name} </h2>
+    <form onSubmit={this.putMessage.bind(this)} className={ this.state.editing == true? 'friend-form' : 'hide-friendForm'}>
         <input
         type="text"
         name="name"
@@ -84,13 +92,15 @@ render() {
         
         />
     
-         
-          <button onClick={this.putMessage.bind(this)}> Update Smurf</button>
-         {/* <button onClick={() =>this.props.delete(this.props.friends.id) }>Delete Friend</button> */}
+       
+          {/* <button onClick={() =>this.props.delete(this.props.id) }>Delete Friend</button>  */}
       
 
 
     </form>
+
+    
+    <button onClick={this.putMessage.bind(this)}> Update Smurf</button>
     
     </div>
     </div>
@@ -101,11 +111,14 @@ render() {
 
 function mapStateToProps (state) {
     return {   
+        updatingSmurf: state.updatingSmurf
        };
 }
 
+UpdateSmurfForm = withRouter(UpdateSmurfForm);
+
 export default connect(
     mapStateToProps,
-    {updateSmurf: updateSmurf } 
+    {updateSmurf: updateSmurf} 
 )(UpdateSmurfForm);
 

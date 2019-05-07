@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from '../components/NavBar';
 import SmurfListView from '../components/SmurfListView';
 import SmurfForm from '../components/SmurfForm';
+import UpdateSmurfContainer from '../components/UpdateSmurfContainer';
 
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -20,8 +21,9 @@ class App extends Component {
       <Router>
       <div className="App">
         <Route path="/" component={NavBar} />
-        <Route exact path="/" component={SmurfListView} />
+        <Route  path="/" component={SmurfListView} />
         <Route exact path="/smurfForm" component={SmurfForm} />
+      <Route exact path="/updateSmurf" component={UpdateSmurfContainer}/>
       </div>
       </Router>
     );

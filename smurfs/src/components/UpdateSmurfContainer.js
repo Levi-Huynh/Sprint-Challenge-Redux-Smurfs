@@ -1,7 +1,9 @@
-import React from 'react';
+import React ,{ Component } from 'react';
 import UpdateSmurfForm from '../components/UpdateSmurfForm';
+import { connect } from "react-redux";
 
 function UpdateSmurfContainer(props) {
+
 
 
 return (
@@ -15,6 +17,7 @@ return (
       id={smurf.id}
       key={smurf.id}
     />
+
     
       
 
@@ -28,4 +31,16 @@ return (
 
 }
 
-export default UpdateSmurfContainer;
+
+function mapStateToProps (state) {
+   return {   
+      smurfs: state.smurfs,
+   
+      };
+}
+
+export default connect(
+   mapStateToProps,
+ 
+)(UpdateSmurfContainer);
+

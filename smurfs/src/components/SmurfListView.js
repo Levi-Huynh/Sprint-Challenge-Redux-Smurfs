@@ -26,8 +26,8 @@ class SmurfListView extends React.Component {
       <div className="CharactersList_wrapper">
         {this.props.fetchingSmurfs? <h1>Loading</h1> : null}
        {console.log("I'm props", this.props.smurfs)}
-        <SmurfList smurfs={this.props.smurfs} />
-         <UpdateSmurfContainer smurfs={this.props.smurfs}/> 
+        <SmurfList  smurfs={this.props.smurfs} />
+        
       </div>
     );
   }

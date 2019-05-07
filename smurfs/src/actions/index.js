@@ -66,3 +66,22 @@ export const updateSmurf = (name, age, height, id) => dispatch => {
   })
   .catch(err=> console.log(err));
 }
+
+
+
+// export const LOAD_DELETE_SMURF = "LOAD_DELETE_SMURF";
+// export const DELETE_SMURF_SUCCESS = "DELETE_SMURF_SUCCESS";
+
+// export const deleteSmurf = (id) => dispatch => {
+// dispatch({type: LOAD_DELETE_SMURF});
+// return axios
+//   .delete(`http://localhost:3333/smurfs/${id}`)
+//   .then(res => {
+//     console.log("delete:", res);
+//     dispatch({type: DELETE_SMURF_SUCCESS, payload:id});
+//   })
+//   .catch(err => console.log(err));
+
+// }
+
+
